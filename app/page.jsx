@@ -113,17 +113,76 @@ function Home() {
 
   return (
     
-    <main className="flex flex-col w-full min-h-screen items-center justify-center bg-gradient-to-tr from-[#0a0f1f] via-[#1e1b4b] to-[#3b2f85] text-white xl:py-10 lg:py-10">
+//     <main className="flex flex-col w-full min-h-screen items-center justify-center bg-gradient-to-tr from-[#0a0f1f] via-[#1e1b4b] to-[#3b2f85] text-white xl:py-10 lg:py-10">
+//   <form
+//     onSubmit={handleSubmit}
+//     className="
+//       flex flex-col items-center justify-center w-[80%]
+//       lg:w-[45%] max-w-lg sm:max-w-xl md:max-w-2xl 
+//       border border-violet-500/40 rounded-2xl sm:p-10 gap-6 sm:gap-8 
+//       shadow-2xl shadow-indigo-900/40 bg-black/20 backdrop-blur-md 
+//     "
+//   >
+//     <h1 className="text-2xl sm:text-3xl font-bold tracking-wide text-violet-300 mb-2">
+//       SGPA Calculator
+//     </h1>
+
+//     <input
+//       type="text"
+//       placeholder="Enter USN"
+//       className="
+//         w-full sm:w-4/5 h-12 sm:h-14 px-3 sm:px-4 text-center 
+//         rounded-xl border-2 border-white/20 bg-white/5 
+//         focus:bg-white/10 focus:border-violet-400 
+//         placeholder-white/50 text-base sm:text-lg tracking-wide 
+//         transition-all duration-300 outline-none
+//       "
+//     />
+
+//     {subjects.map((subject) => (
+//       <input
+//         key={subject.id}
+//         type="text"
+//         placeholder={subject.placeholder}
+//         maxLength={3}
+//         className="
+//           w-full sm:w-4/5 h-12 sm:h-14 px-3 sm:px-4 text-center 
+//           rounded-xl border-2 border-white/20 bg-white/5 
+//           focus:bg-white/10 focus:border-indigo-400 
+//           placeholder-white/50 text-base sm:text-lg tracking-wide 
+//           transition-all duration-300 outline-none
+//         "
+//       />
+//     ))}
+
+//     <button
+//       type="submit"
+//       className="
+//         mt-4 px-6 sm:px-8 py-2 sm:py-3 w-full sm:w-56 text-base sm:text-lg 
+//         font-semibold rounded-xl sm:rounded-2xl 
+//         bg-gradient-to-r from-indigo-500 via-violet-600 to-purple-700 
+//         hover:from-indigo-600 hover:via-violet-700 hover:to-purple-800 
+//         shadow-lg shadow-violet-900/50 hover:shadow-xl hover:shadow-violet-900/70 
+//         transition-all duration-300
+//       "
+//     >
+//       Submit
+//     </button>
+//   </form>
+// </main>
+<main className="flex flex-col w-full min-h-screen items-center justify-center bg-gradient-to-tr from-[#0a0f1f] via-[#1e1b4b] to-[#3b2f85] text-white py-6 sm:py-8 lg:py-10">
   <form
     onSubmit={handleSubmit}
     className="
-      flex flex-col items-center justify-center w-[80%]
-      lg:w-[45%] max-w-lg sm:max-w-xl md:max-w-2xl 
-      border border-violet-500/40 rounded-2xl sm:p-10 gap-6 sm:gap-8 
-      shadow-2xl shadow-indigo-900/40 bg-black/20 backdrop-blur-md 
+      flex flex-col items-center justify-center 
+      w-[95%] sm:w-[85%] md:w-[70%] lg:w-[45%] max-w-2xl
+      border border-violet-500/40 rounded-xl sm:rounded-2xl 
+      p-5 sm:p-8 lg:p-10 gap-5 sm:gap-7 lg:gap-8
+      shadow-xl sm:shadow-2xl shadow-indigo-900/40 
+      bg-black/30 backdrop-blur-md
     "
   >
-    <h1 className="text-2xl sm:text-3xl font-bold tracking-wide text-violet-300 mb-2">
+    <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-violet-300 mb-2 text-center">
       SGPA Calculator
     </h1>
 
@@ -131,10 +190,10 @@ function Home() {
       type="text"
       placeholder="Enter USN"
       className="
-        w-full sm:w-4/5 h-12 sm:h-14 px-3 sm:px-4 text-center 
-        rounded-xl border-2 border-white/20 bg-white/5 
+        w-full h-11 sm:h-12 md:h-14 px-3 text-center 
+        rounded-lg sm:rounded-xl border border-white/20 bg-white/5 
         focus:bg-white/10 focus:border-violet-400 
-        placeholder-white/50 text-base sm:text-lg tracking-wide 
+        placeholder-white/50 text-sm sm:text-base md:text-lg 
         transition-all duration-300 outline-none
       "
     />
@@ -146,10 +205,10 @@ function Home() {
         placeholder={subject.placeholder}
         maxLength={3}
         className="
-          w-full sm:w-4/5 h-12 sm:h-14 px-3 sm:px-4 text-center 
-          rounded-xl border-2 border-white/20 bg-white/5 
+          w-full h-11 sm:h-12 md:h-14 px-3 text-center 
+          rounded-lg sm:rounded-xl border border-white/20 bg-white/5 
           focus:bg-white/10 focus:border-indigo-400 
-          placeholder-white/50 text-base sm:text-lg tracking-wide 
+          placeholder-white/50 text-sm sm:text-base md:text-lg 
           transition-all duration-300 outline-none
         "
       />
@@ -158,11 +217,12 @@ function Home() {
     <button
       type="submit"
       className="
-        mt-4 px-6 sm:px-8 py-2 sm:py-3 w-full sm:w-56 text-base sm:text-lg 
-        font-semibold rounded-xl sm:rounded-2xl 
+        mt-3 sm:mt-4 px-5 sm:px-7 py-2 sm:py-3 w-full sm:w-56 
+        text-sm sm:text-base md:text-lg font-semibold 
+        rounded-lg sm:rounded-xl md:rounded-2xl 
         bg-gradient-to-r from-indigo-500 via-violet-600 to-purple-700 
         hover:from-indigo-600 hover:via-violet-700 hover:to-purple-800 
-        shadow-lg shadow-violet-900/50 hover:shadow-xl hover:shadow-violet-900/70 
+        shadow-md sm:shadow-lg hover:shadow-xl shadow-violet-900/50 
         transition-all duration-300
       "
     >
@@ -170,6 +230,7 @@ function Home() {
     </button>
   </form>
 </main>
+
 
   );
 }
