@@ -117,7 +117,7 @@ function Home() {
   <form
     onSubmit={handleSubmit}
     className="
-      flex flex-col items-center justify-center w-full
+      flex flex-col items-center justify-center w-[80%]
       lg:w-[45%] max-w-lg sm:max-w-xl md:max-w-2xl 
       border border-violet-500/40 rounded-2xl sm:p-10 gap-6 sm:gap-8 
       shadow-2xl shadow-indigo-900/40 bg-black/20 backdrop-blur-md 
