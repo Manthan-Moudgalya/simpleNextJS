@@ -113,12 +113,12 @@ function Home() {
 
   return (
     
-    <main className="flex flex-col w-full min-h-screen items-center justify-center bg-gradient-to-tr from-[#0a0f1f] via-[#1e1b4b] to-[#3b2f85] text-white py-10">
+    <main className="flex flex-col w-full min-h-screen items-center justify-center bg-gradient-to-tr from-[#0a0f1f] via-[#1e1b4b] to-[#3b2f85] text-white xl:py-10 lg:py-10">
   <form
     onSubmit={handleSubmit}
     className="
-      flex flex-col items-center justify-center
-      w-[45%] max-w-lg sm:max-w-xl md:max-w-2xl 
+      flex flex-col items-center justify-center w-full
+      lg:w-[45%] max-w-lg sm:max-w-xl md:max-w-2xl 
       border border-violet-500/40 rounded-2xl sm:p-10 gap-6 sm:gap-8 
       shadow-2xl shadow-indigo-900/40 bg-black/20 backdrop-blur-md 
     "
