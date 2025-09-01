@@ -109,45 +109,18 @@ function Home() {
         alert(`USN: ${formattedUSN}\nSGPA: ${gpa}`);
     };
 
+    
+
   return (
-    // <main className="flex flex-col w-full h-screen items-center justify-center bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#312e81] text-white overflow-x-hidden">
-    //   <form
-    //     onSubmit={handleSubmit}
-    //     className="flex flex-col items-center justify-center h-auto w-[40%] border border-violet-400 rounded-2xl p-8 gap-7 shadow-lg shadow-indigo-800/40"
-    //   >
-    //     <input
-    //       type="text"
-    //       id="usn"
-    //       ref={usnRef}
-    //       placeholder="USN"
-    //       className="w-3/5 h-12 text-center rounded-2xl border-2 border-white/30 bg-transparent focus:outline-none focus:border-violet-400 placeholder-white/60 transition-all duration-300"
-    //     />
-    //     {subjects.map((subject) => (
-    //       <input
-    //         key={subject.id}
-    //         type="text"
-    //         id={subject.id}
-    //         maxLength={3}
-    //         placeholder={subject.placeholder}
-    //         className="w-4/5 h-12 text-center rounded-2xl border-2 border-white/30 bg-transparent focus:outline-none focus:border-violet-400 placeholder-white/60 transition-all duration-300"
-    //       />
-    //     ))}
-    //     <button
-    //       type="submit"
-    //       className="px-6 py-2 w-[200px] rounded-2xl bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-600 hover:to-violet-700 shadow-md shadow-indigo-900/50 transition-all duration-300"
-    //     >
-    //       Submit
-    //     </button>
-    //   </form>
-    // </main>
-    <main className="flex flex-col w-full min-h-screen items-center justify-center bg-gradient-to-tr from-[#0a0f1f] via-[#1e1b4b] to-[#3b2f85] text-white px-4">
+    
+    <main className="flex flex-col w-full min-h-screen items-center justify-center bg-gradient-to-tr from-[#0a0f1f] via-[#1e1b4b] to-[#3b2f85] text-white py-10">
   <form
     onSubmit={handleSubmit}
     className="
-      flex flex-col items-center justify-center 
-      w-full max-w-lg sm:max-w-xl md:max-w-2xl 
-      border border-violet-500/40 rounded-2xl p-6 sm:p-10 gap-6 sm:gap-8 
-      shadow-2xl shadow-indigo-900/40 bg-black/20 backdrop-blur-md
+      flex flex-col items-center justify-center
+      w-[45%] max-w-lg sm:max-w-xl md:max-w-2xl 
+      border border-violet-500/40 rounded-2xl sm:p-10 gap-6 sm:gap-8 
+      shadow-2xl shadow-indigo-900/40 bg-black/20 backdrop-blur-md 
     "
   >
     <h1 className="text-2xl sm:text-3xl font-bold tracking-wide text-violet-300 mb-2">

@@ -39,4 +39,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   height: screen;
   width: 100vw;
+  overflow-x: hidden;
+  /* padding-top: ; */
 }
