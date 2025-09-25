@@ -72,38 +72,58 @@ function Home() {
     return weighted / totalCredits;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-    const usn = usnRef.current.value;
-    const [validUSN] = isUSNValid(usn);
-    if (!validUSN) {
-      alert("Invalid USN format.");
-      return;
-    }
-
-    const results = [];
-    for (let subject of subjects) {
-      const value = document.getElementById(subject.id).value;
-
-      if (!/^\d+$/.test(value)) {
-        alert(`${subject.placeholder}: must be digits only (0-100).`);
+        const usn = usnRef.current.value;
+        const [validUSN] = isUSNValid(usn);
+        if (!validUSN) {
+        alert("Invalid USN format.");
         return;
-      }
+        }
 
-      const num = parseInt(value, 10);
-      if (num < 0 || num > 100) {
-        alert(`${subject.placeholder}: must be between 0 and 100.`);
-        return;
-      }
+        const results = [];
+        for (let subject of subjects) {
+        const value = document.getElementById(subject.id).value;
 
-      results.push({ subjectID: subject.id, marks: num });
+        if (!/^\d+$/.test(value)) {
+            alert(`${subject.placeholder}: must be digits only (0-100).`);
+            return;
+        }
+
+        const num = parseInt(value, 10);
+        if (num < 0 || num > 100) {
+            alert(`${subject.placeholder}: must be between 0 and 100.`);
+            return;
+        }
+
+        results.push({ subjectID: subject.id, marks: num });
+        }
+
+        const gpa = calculateSGPA(results);
+        setGpa(gpa);
+        setShowResult(true);
+
+        try {
+            const res = await fetch("/api/students/saveResults", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ usn, results, gpa }),
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                alert("Saved successfully!");
+            } else {
+                alert(`Error: ${data.message}`);
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Something went wrong while saving.");
+        }   
+    
     }
-
-    const gpa = calculateSGPA(results);
-    setGpa(gpa);
-    setShowResult(true);
-  };
 
   return (
     <main className="flex flex-col w-full min-h-screen items-center justify-center bg-gradient-to-tr from-[#0a0f1f] via-[#1e1b4b] to-[#3b2f85] text-white xl:py-10 lg:py-10">
