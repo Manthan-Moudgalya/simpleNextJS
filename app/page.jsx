@@ -92,10 +92,16 @@ function Home() {
         }
 
         const num = parseInt(value, 10);
-        if (num < 0 || num > 100) {
-            alert(`${subject.placeholder}: must be between 0 and 100.`);
+        if (num <= 0) {
+            alert(`${subject.placeholder}: must be valid USN.`);
             return;
         }
+        
+        if ((num >= 200 && num < 400) || (num > 420)) {
+            alert(`${subject.placeholder}: must be valid USN.`);
+            return;
+        }
+
 
         results.push({ subjectID: subject.id, marks: num });
         }
