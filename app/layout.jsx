@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "CGPA Calculator",
-  description: "Calculates CGPA",
+  title: "SGPA Calculator",
+  description: "Calculates SGPA",
 };
 
 export default function RootLayout({ children }) {

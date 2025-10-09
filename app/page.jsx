@@ -1,8 +1,10 @@
 "use client";
 import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 function Home() {
   const usnRef = useRef();
+  const router = useRouter();
   const [showResult, setShowResult] = useState(false);
   const [gpa, setGpa] = useState(0);
 
@@ -121,18 +123,23 @@ function Home() {
 
             if (res.ok) {
                 alert("Saved successfully!");
+                
             } else {
                 alert(`Error: ${data.message}`);
+                return;
             }
+
+            router.push('/scoreboard')
+
         } catch (err) {
             console.error(err);
             alert("Something went wrong while saving.");
         }   
     
     }
-
+    // bg-gradient-to-tr from-[#0a0f1f] via-[#1e1b4b] to-[#3b2f85]
   return (
-    <main className="flex flex-col w-full min-h-screen items-center justify-center bg-gradient-to-tr from-[#0a0f1f] via-[#1e1b4b] to-[#3b2f85] text-white xl:py-10 lg:py-10">
+    <main className="flex flex-col w-full min-h-screen items-center justify-center bg-gradient-to-br from-[#2A0A45] via-[#3D0C61] to-[#1E003E] text-white xl:py-10 lg:py-10">
       <form
         onSubmit={handleSubmit}
         className="
