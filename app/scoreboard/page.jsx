@@ -45,10 +45,10 @@ export default function Scoreboard() {
           <table className="w-full text-left border-collapse text-sm sm:text-base">
             <thead>
               <tr className="bg-purple-800/60 text-purple-100 uppercase tracking-wide">
-                <th className="px-6 py-3 border border-purple-600/40 rounded-tl-xl">
+                <th className="px-6 py-3 border border-purple-600/40 rounded-tl-xl border-none">
                   USN
                 </th>
-                <th className="px-6 py-3 border border-purple-600/40 rounded-tr-xl">
+                <th className="px-6 py-3 border border-purple-600/40 rounded-tr-xl border-none">
                   CGPA
                 </th>
               </tr>
