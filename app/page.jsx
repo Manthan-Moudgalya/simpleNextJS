@@ -14,7 +14,7 @@ function Home() {
     { id: "cns", placeholder: "Cryptography & Network Security (4 Credits)", cred: 4 },
     { id: "pe", placeholder: "Professional Elective Course (3 Credits)", cred: 3 },
     { id: "oe", placeholder: "Open Elective Course (3 Credits)", cred: 3 },
-    { id: "mpp2", placeholder: "Major Project Phase-II (reduced it to 100 from 200) (6 Credits)", cred: 6 },
+    { id: "mpp2", placeholder: "Major Project Phase-II (200 -> 100 reduce it) (6 Credits)", cred: 6 },
   ];
 
   function formatUSN(usn) {
