@@ -14,7 +14,7 @@ function Home() {
     { id: "cns", placeholder: "Cryptography & Network Security (4 Credits)", cred: 4 },
     { id: "pe", placeholder: "Professional Elective Course (3 Credits)", cred: 3 },
     { id: "oe", placeholder: "Open Elective Course (3 Credits)", cred: 3 },
-    { id: "mpp2", placeholder: "Major Project Phase-II (6 Credits)", cred: 6 },
+    { id: "mpp2", placeholder: "Major Project Phase-II (reduced it to 100 from 200) (6 Credits)", cred: 6 },
   ];
 
   function formatUSN(usn) {
@@ -86,26 +86,25 @@ function Home() {
 
         const results = [];
         for (let subject of subjects) {
-        const value = document.getElementById(subject.id).value;
+            const value = document.getElementById(subject.id).value;
 
-        if (!/^\d+$/.test(value)) {
-            alert(`${subject.placeholder}: must be digits only (0-100).`);
-            return;
-        }
+            if (!/^\d+$/.test(value)) {
+                alert(`${subject.placeholder}: must be digits only (0-100).`);
+                return;
+            }
 
-        const num = parseInt(value, 10);
-        if (num <= 0) {
-            alert(`${subject.placeholder}: must be valid USN.`);
-            return;
-        }
-        
-        if ((num >= 200 && num < 400) || (num > 420)) {
-            alert(`${subject.placeholder}: must be valid USN.`);
-            return;
-        }
+            const num = parseInt(value, 10);
+            if (num <= 0) {
+                alert(`${subject.placeholder}: must be valid USN.`);
+                return;
+            }
+            
+            if ((num >= 200 && num < 400) || (num > 420)) {
+                alert(`${subject.placeholder}: must be valid USN.`);
+                return;
+            }
 
-
-        results.push({ subjectID: subject.id, marks: num });
+            results.push({ subjectID: subject.id, marks: num });
         }
 
         const gpa = calculateSGPA(results);
